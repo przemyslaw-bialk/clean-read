@@ -28,10 +28,10 @@ app.use("/api/user", userRoutes);
 app.use("/api/articles", articleRoutes);
 app.use("/api/contact", contactRoutes);
 app.use("/api/rss/", rssRoutes);
-app.use("/contact", (req, res, next) => {
-  console.log("Request body:", req.body); // To sprawdzi, co otrzymujesz
-  next();
-});
+// app.use("/contact", (req, res, next) => {
+//   console.log("Request body:", req.body); // To sprawdzi, co otrzymujesz
+//   next();
+// });
 
 if (process.env.NODE_ENV === "production") {
   // serwowanie frontend build
