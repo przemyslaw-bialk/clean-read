@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../../utils/Loader/Loader";
 import ArticleRSS from "../../components/ArticleRSS/ArticleRSS";
-import { API } from "../../api";
+import API from "../../api";
 
 const HotTopicsSport = () => {
   const [articles, setArticles] = useState([]);

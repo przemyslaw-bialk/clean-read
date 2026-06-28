@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import FeedbackMessage from "../../components/FeedbackMessage/FeedbackMessage";
-import { API } from "../../api";
+import API from "../../api";
 
 const AddArticle = () => {
   const { dispatch } = useArticlesContext();

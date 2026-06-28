@@ -1,4 +1,4 @@
-import { API } from "../../api";
+import API from "../../api";
 
 const GenerateArticle = () => {
   const handleGenerate = async () => {

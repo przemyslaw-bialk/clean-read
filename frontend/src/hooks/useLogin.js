@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
-import { API } from "../api";
+import API from "../api";
 
 const useLogin = () => {
   const { dispatch } = useAuthContext();

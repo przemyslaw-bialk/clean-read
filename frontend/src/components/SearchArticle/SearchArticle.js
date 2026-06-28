@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
-import { API } from "../../api";
+import API from "../../api";
 
 const SearchArticle = () => {
   const [searchText, setSearchText] = useState("");

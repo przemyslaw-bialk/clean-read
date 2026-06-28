@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { API } from "../../api";
+import API from "../../api";
 
 const TagsPage = () => {
   const { tag } = useParams();

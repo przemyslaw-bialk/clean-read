@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ErrorInfo from "../../utils/ErrorInfo";
 import { Link } from "react-router-dom";
-import { API } from "../../api";
+import API from "../../api";
 
 const SingleArticle = () => {
   const { id } = useParams();

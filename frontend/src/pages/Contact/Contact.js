@@ -1,6 +1,6 @@
 import { useState } from "react";
 import FeedbackMessage from "../../components/FeedbackMessage/FeedbackMessage";
-import { API } from "../../api";
+import API from "../../api";
 
 const validator = require("validator");
 

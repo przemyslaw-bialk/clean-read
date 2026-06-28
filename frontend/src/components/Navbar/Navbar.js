@@ -8,7 +8,7 @@ import { useReadLaterContext } from "../../hooks/useReadLaterContext";
 import { FaRegUserCircle, FaReadme } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import SearchArticle from "../SearchArticle/SearchArticle";
-import { API } from "../../api";
+import API from "../../api";
 
 const Navbar = () => {
   const [message, setMessage] = useState(false);

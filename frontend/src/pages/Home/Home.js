@@ -3,7 +3,7 @@ import ArticleDetails from "../../components/ArticleDetails/ArticleDetails";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import Pagination from "../../components/Pagination/Pagination";
 import GenerateArticle from "../../components/GenerateArticle/GenerateArticle";
-import { API } from "../../api";
+import API from "../../api";
 
 const Home = () => {
   const { articles, dispatch } = useArticlesContext();

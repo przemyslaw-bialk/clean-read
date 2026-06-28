@@ -1,7 +1,7 @@
 import { FaTrash } from "react-icons/fa";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useReadLaterContext } from "../../hooks/useReadLaterContext";
-import { API } from "../../api";
+import API from "../../api";
 
 const DeleteFromReadLaterList = ({ article }) => {
   const { user } = useAuthContext();

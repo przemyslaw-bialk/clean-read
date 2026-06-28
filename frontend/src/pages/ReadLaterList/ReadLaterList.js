@@ -3,7 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import ReadLaterArticleDetail from "../../components/ReadLaterArticleDetail/ReadLaterArticleDetail";
 import { useReadLaterContext } from "../../hooks/useReadLaterContext";
 import Loader from "../../utils/Loader/Loader";
-import { API } from "../../api";
+import API from "../../api";
 
 const ReadLaterList = () => {
   const { user } = useAuthContext();
