@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import { API } from "../../api";
 
 const TagsPage = () => {
   const { tag } = useParams();
@@ -8,7 +9,7 @@ const TagsPage = () => {
 
   useEffect(() => {
     const fetchTagArticles = async () => {
-      const response = await fetch(`/api/articles/?tags=${tag}`);
+      const response = await fetch(`${API}/api/articles/?tags=${tag}`);
 
       const data = await response.json();
 

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import FeedbackMessage from "../../components/FeedbackMessage/FeedbackMessage";
+import { API } from "../../api";
+
 const validator = require("validator");
 
 const Contact = () => {
@@ -16,7 +18,7 @@ const Contact = () => {
       return;
     }
 
-    const response = await fetch("/api/contact", {
+    const response = await fetch(`${API}/api/contact`, {
       method: "POST",
       body: JSON.stringify({ email, userMessage }),
       headers: {

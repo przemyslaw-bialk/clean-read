@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import FeedbackMessage from "../FeedbackMessage/FeedbackMessage";
 import { useReadLaterContext } from "../../hooks/useReadLaterContext";
+import API from "../../api";
 
 const AddOnReadLaterList = ({ article }) => {
   const { user } = useAuthContext();
@@ -15,13 +16,16 @@ const AddOnReadLaterList = ({ article }) => {
     setSuccess(null);
 
     try {
-      const response = await fetch(`/api/user/read-later/${article._id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
+      const response = await fetch(
+        `${API}/api/user/read-later/${article._id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${user.token}`,
+          },
         },
-      });
+      );
 
       const data = await response.json();
       if (response.ok) {

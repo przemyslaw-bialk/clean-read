@@ -1,7 +1,9 @@
+import { API } from "../../api";
+
 const GenerateArticle = () => {
   const handleGenerate = async () => {
     try {
-      const response = await fetch(`/api/ai/generate-article`, {
+      const response = await fetch(`${API}/api/ai/generate-article`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

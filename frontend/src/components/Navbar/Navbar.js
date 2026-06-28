@@ -8,6 +8,7 @@ import { useReadLaterContext } from "../../hooks/useReadLaterContext";
 import { FaRegUserCircle, FaReadme } from "react-icons/fa";
 import { MdLogin } from "react-icons/md";
 import SearchArticle from "../SearchArticle/SearchArticle";
+import { API } from "../../api";
 
 const Navbar = () => {
   const [message, setMessage] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
     if (!user) return;
     const fetchReadLater = async () => {
       try {
-        const response = await fetch(`/api/user/read-later/`, {
+        const response = await fetch(`${API}/api/user/read-later/`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

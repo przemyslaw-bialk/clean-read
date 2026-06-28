@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Loader from "../../utils/Loader/Loader";
 import ArticleRSS from "../../components/ArticleRSS/ArticleRSS";
+import { API } from "../../api";
 
 const HotTopicsTechnology = () => {
   const [loading, setLoading] = useState(false);
@@ -10,7 +11,7 @@ const HotTopicsTechnology = () => {
     const fetchArticles = async () => {
       setLoading(true);
       try {
-        const response = await fetch("/api/rss/technology", {
+        const response = await fetch(`${API}/api/rss/technology`, {
           method: "GET",
         });
 

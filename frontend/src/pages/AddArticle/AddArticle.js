@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import FeedbackMessage from "../../components/FeedbackMessage/FeedbackMessage";
+import { API } from "../../api";
 
 const AddArticle = () => {
   const { dispatch } = useArticlesContext();
@@ -27,7 +28,7 @@ const AddArticle = () => {
 
     const article = { title, content, tags: tagsArray };
 
-    const response = await fetch("/api/articles", {
+    const response = await fetch(`${API}/api/articles`, {
       method: "POST",
       body: JSON.stringify(article),
       headers: {

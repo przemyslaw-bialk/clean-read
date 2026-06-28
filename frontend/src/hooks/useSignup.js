@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useAuthContext } from "./useAuthContext";
+import { API } from "../api";
 
 const useSignup = () => {
   const { dispatch } = useAuthContext();
@@ -14,7 +15,7 @@ const useSignup = () => {
 
     const user = { email, name, password };
 
-    const response = await fetch("/api/user/signup", {
+    const response = await fetch(`${API}/api/user/signup`, {
       method: "POST",
       body: JSON.stringify(user),
       headers: {

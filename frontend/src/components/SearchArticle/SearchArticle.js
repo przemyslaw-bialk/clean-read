@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "../Modal/Modal";
+import { API } from "../../api";
 
 const SearchArticle = () => {
   const [searchText, setSearchText] = useState("");
@@ -13,7 +14,9 @@ const SearchArticle = () => {
       setSearchText("");
 
       try {
-        const response = await fetch(`api/articles/search?q=${searchText}`);
+        const response = await fetch(
+          `${API}/api/articles/search?q=${searchText}`,
+        );
         const data = await response.json();
 
         if (response.ok) {

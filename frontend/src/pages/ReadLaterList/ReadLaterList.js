@@ -3,6 +3,7 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 import ReadLaterArticleDetail from "../../components/ReadLaterArticleDetail/ReadLaterArticleDetail";
 import { useReadLaterContext } from "../../hooks/useReadLaterContext";
 import Loader from "../../utils/Loader/Loader";
+import { API } from "../../api";
 
 const ReadLaterList = () => {
   const { user } = useAuthContext();
@@ -13,7 +14,7 @@ const ReadLaterList = () => {
     const fetchFavourites = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`/api/user/read-later/`, {
+        const response = await fetch(`${API}/api/user/read-later/`, {
           headers: {
             "Content-Type": "application/json",
             Authorization: `Bearer ${user.token}`,

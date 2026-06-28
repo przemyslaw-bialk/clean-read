@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ErrorInfo from "../../utils/ErrorInfo";
 import { Link } from "react-router-dom";
+import { API } from "../../api";
 
 const SingleArticle = () => {
   const { id } = useParams();
@@ -11,7 +12,7 @@ const SingleArticle = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await fetch(`/api/articles/${id}`);
+        const response = await fetch(`${API}/api/articles/${id}`);
         const data = await response.json();
 
         if (response.ok) {

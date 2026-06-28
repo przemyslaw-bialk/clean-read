@@ -1,13 +1,14 @@
 import { FaTrash } from "react-icons/fa";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import { useReadLaterContext } from "../../hooks/useReadLaterContext";
+import { API } from "../../api";
 
 const DeleteFromReadLaterList = ({ article }) => {
   const { user } = useAuthContext();
   const { dispatch } = useReadLaterContext();
 
   const handleDelete = async () => {
-    const response = await fetch(`/api/user/read-later/${article._id}`, {
+    const response = await fetch(`${API}/api/user/read-later/${article._id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

@@ -3,6 +3,7 @@ import ArticleDetails from "../../components/ArticleDetails/ArticleDetails";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import Pagination from "../../components/Pagination/Pagination";
 import GenerateArticle from "../../components/GenerateArticle/GenerateArticle";
+import { API } from "../../api";
 
 const Home = () => {
   const { articles, dispatch } = useArticlesContext();
@@ -14,7 +15,7 @@ const Home = () => {
   //    `https://host559218.xce.pl/api/articles?page=${page}`
   useEffect(() => {
     const fetchArticles = async () => {
-      const respone = await fetch(`/api/articles?page=${page}`);
+      const respone = await fetch(`${API}/api/articles?page=${page}`);
       const data = await respone.json();
 
       if (respone.ok) {
