@@ -3,24 +3,33 @@ import ArticleDetails from "../../components/ArticleDetails/ArticleDetails";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import Pagination from "../../components/Pagination/Pagination";
 import GenerateArticle from "../../components/GenerateArticle/GenerateArticle";
+import Loader from "../../utils/Loader/Loader";
 import API from "../../api";
 
 const Home = () => {
   const { articles, dispatch } = useArticlesContext();
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   const articlesPerPage = 10;
 
-  //    `https://host559218.xce.pl/api/articles?page=${page}`
   useEffect(() => {
     const fetchArticles = async () => {
-      const respone = await fetch(`${API}/api/articles?page=${page}`);
-      const data = await respone.json();
+      setLoading(true);
 
-      if (respone.ok) {
-        dispatch({ type: "SET_ARTICLES", payload: data });
-        setHasMore(data.length === articlesPerPage);
+      try {
+        const response = await fetch(`${API}/api/articles?page=${page}`);
+        const data = await response.json();
+
+        if (response.ok) {
+          dispatch({ type: "SET_ARTICLES", payload: data });
+          setHasMore(data.length === articlesPerPage);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -35,15 +44,20 @@ const Home = () => {
     if (page > 0) setPage((prev) => prev - 1);
   };
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div className="home">
       <GenerateArticle />
+
       <div className="article">
-        {articles &&
-          articles.map((article) => (
-            <ArticleDetails key={article._id} article={article} />
-          ))}
+        {articles?.map((article) => (
+          <ArticleDetails key={article._id} article={article} />
+        ))}
       </div>
+
       <Pagination
         handlePrevious={handlePrevious}
         handleNext={handleNext}
