@@ -1,5 +1,5 @@
 const nodemailer = require("nodemailer");
-export const handleContactForm = async (req, res) => {
+const handleContactForm = async (req, res) => {
   const { email, userMessage } = req.body;
 
   if (!email || !userMessage) {
@@ -29,3 +29,5 @@ export const handleContactForm = async (req, res) => {
     res.status(500).json({ message: "something went wrong!" });
   }
 };
+
+module.exports = { handleContactForm };
