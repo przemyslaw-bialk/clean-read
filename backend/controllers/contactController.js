@@ -1,5 +1,4 @@
-import nodemailer from "nodemailer";
-
+const nodemailer = require("nodemailer");
 export const handleContactForm = async (req, res) => {
   const { email, userMessage } = req.body;
 

@@ -8,6 +8,7 @@ const Home = () => {
   const { articles, dispatch } = useArticlesContext();
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(true);
+
   const articlesPerPage = 10;
 
   //    `https://host559218.xce.pl/api/articles?page=${page}`
