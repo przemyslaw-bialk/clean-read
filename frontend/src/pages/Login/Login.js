@@ -15,6 +15,9 @@ const Login = () => {
   return (
     <div className="login">
       <h3 className="login__header">Log in</h3>
+      <p>for testing please use:</p>
+      <p>login: test@test.com</p>
+      <p>password: test</p>
       <form className="login__form" onSubmit={handleSubmit}>
         <label className="login__label">Mail</label>
         <input
