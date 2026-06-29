@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import ArticleDetails from "../../components/ArticleDetails/ArticleDetails";
 import { useArticlesContext } from "../../hooks/useArticlesContext";
 import Pagination from "../../components/Pagination/Pagination";
-import GenerateArticle from "../../components/GenerateArticle/GenerateArticle";
 import Loader from "../../utils/Loader/Loader";
 import API from "../../api";
 
@@ -48,15 +47,18 @@ const Home = () => {
     return (
       <div>
         <Loader />
-        <p style={{ color: "red" }}>Cold start: please wait approx. 40s!</p>
+        <p style={{ color: "red" }}>
+          Cold start: please wait approx. 40s! info for recruiters :)
+        </p>
+        <p>for login please use:</p>
+        <p>login: test@test.com</p>
+        <p>password: test</p>
       </div>
     );
   }
 
   return (
     <div className="home">
-      <GenerateArticle />
-
       <div className="article">
         {articles?.map((article) => (
           <ArticleDetails key={article._id} article={article} />
