@@ -45,7 +45,12 @@ const Home = () => {
   };
 
   if (loading) {
-    return <Loader />;
+    return (
+      <div>
+        <Loader />
+        <p style={{ color: "red" }}>Cold start: please wait approx. 40s!</p>
+      </div>
+    );
   }
 
   return (
